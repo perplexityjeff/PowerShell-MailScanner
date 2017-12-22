@@ -23,3 +23,10 @@ I am still learning PowerShell and I do it mainly by just working as a day to da
 The idea came by a post found on the mailscanner mailing list found here.
 
 http://lists.mailscanner.info/pipermail/mailscanner/2010-June/095932.html
+
+## References
+https://www.mailscanner.info/
+http://mailwatch.org/
+http://lists.mailscanner.info/pipermail/mailscanner/2010-June/095932.html
+https://dev.mysql.com/downloads/connector/net/6.9.html
+https://www.cogmotive.com/blog/powershell/querying-mysql-from-powershell
