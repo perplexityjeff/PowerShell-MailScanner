@@ -11,8 +11,9 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 ```
 
 ## Prerequisites
-The MySQL .NET Connector: https://dev.mysql.com/downloads/connector/net/6.9.html
-Remote Access to the MySQL or MariaDB database using preferably a good secured user that can only 'Select' 
+* The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/6.9.html the script looks by default on location C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll however using -MySQLPath you are change it if you like.
+
+* Remote Access to the MySQL or MariaDB database using preferably a good secured user that can only 'Select' 
 
 ## Learning
 I am still learning PowerShell everyday and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. 
