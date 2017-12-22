@@ -21,4 +21,5 @@ I am still learning PowerShell and I do it mainly by just working as a day to da
 
 ## Credits
 The idea came by a post found on the mailscanner mailing list found here.
+
 http://lists.mailscanner.info/pipermail/mailscanner/2010-June/095932.html
