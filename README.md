@@ -4,9 +4,10 @@ This is a PowerShell script to query a MailScanner database using the MySQL .NET
 ## Usage
 You can of course always use Get-Help .\Get-MailScan to get examples or help but the most general usage of the script could be as follows. 
 
+Example that retrieves all mail entries that are marked as Spam and only from Today that are in the database
+
 ```
 ./Get-MailScan -Server 127.0.0.1 -UserName user -Password example -Spam -Today
-Example that retrieves all mail entries that are marked as Spam and only from Today that are in the database
 ```
 
 ## Prerequisites
