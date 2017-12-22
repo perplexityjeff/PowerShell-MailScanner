@@ -9,7 +9,7 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 ```
 ./Get-MailScan -Server 127.0.0.1 -UserName user -Password example -Spam -Today
 ```
-Use Format-Table and Select to get the table how you want it. 
+Use Format-Table and Select-Object to get the table how you want it. 
 
 ## Prerequisites
 * The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/6.9.html. The script looks by default on location C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll however using -MySQLPath you are change it if you like.
