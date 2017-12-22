@@ -11,7 +11,7 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 ```
 
 ## Prerequisites
-* The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/6.9.html the script looks by default on location C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll however using -MySQLPath you are change it if you like.
+* The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/6.9.html. The script looks by default on location C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll however using -MySQLPath you are change it if you like.
 
 * Remote Access to the MySQL or MariaDB database using preferably a good secured user that can only 'Select' 
 
