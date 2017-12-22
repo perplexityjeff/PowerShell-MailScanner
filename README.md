@@ -17,4 +17,8 @@ Use Format-Table and Select-Object to get the table how you want it.
 * Remote Access to the MySQL or MariaDB database using a good secured user that can only 'Select' 
 
 ## Learning
-I am still learning PowerShell everyday and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. 
+I am still learning PowerShell and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. 
+
+## Credits
+The idea came by a post found on the mailscanner mailing list found here.
+http://lists.mailscanner.info/pipermail/mailscanner/2010-June/095932.html
