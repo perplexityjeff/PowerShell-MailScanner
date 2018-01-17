@@ -47,15 +47,17 @@ https://github.com/perplexityjeff
 [CmdletBinding()]
 param
 (
-    [Parameter(Mandatory=$true)][String]$Server,
-    [Parameter()][String]$Database = "mailscanner",
+    [Parameter(Mandatory=$true)][String]$Server,  
     [Parameter(Mandatory=$true)][String]$UserName,
     [Parameter(Mandatory=$true)][String]$Password,
-    [Parameter()][int]$Port = 3306,
     [Parameter()][Switch]$Spam,
+    [Parameter()][Switch]$NotSpam,
     [Parameter()][Switch]$Today,
     [Parameter()][String]$To,
     [Parameter()][String]$From,
+    [Parameter()][String]$TLD,
+    [Parameter()][String]$Database = "mailscanner",
+    [Parameter()][int]$Port = 3306,
     [Parameter()][String]$MySQLPath = "C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll"  
 )
 
@@ -103,7 +105,6 @@ if ($Today)
     $query += "date='$DateToday'"
 }
 
-#Query builder for $OnlySpam to only include entries that are marked as spam
 if ($Spam)
 {
     if ($query -notlike '*where*')
@@ -116,6 +117,20 @@ if ($Spam)
     }
 
     $query += "isspam='1'"
+}
+
+if ($NotSpam)
+{
+    if ($query -notlike '*where*')
+    {
+        $query += " where "
+    }
+    else 
+    {
+        $query += " and "
+    }
+
+    $query += "isspam='0'"
 }
 
 if ($To)
@@ -144,6 +159,20 @@ if ($From)
     }
 
     $query += "from_address='$From'"
+}
+
+if ($TLD)
+{
+    if ($query -notlike '*where*')
+    {
+        $query += " where "
+    }
+    else
+    {
+        $query += " and "
+    }
+
+    $query += "from_address like '%.$TLD'"
 }
 
 Write-Verbose "Data query has been setup"
