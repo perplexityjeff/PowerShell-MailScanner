@@ -57,6 +57,7 @@ param
     [Parameter()][String]$From,
     [Parameter()][String]$TLD,
     [Parameter()][Switch]$Virus,
+    [Parameter()][String]$Subject, 
     [Parameter()][String]$Database = "mailscanner",
     [Parameter()][int]$Port = 3306,
     [Parameter()][String]$MySQLPath = "C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll"  
@@ -188,6 +189,20 @@ if ($Virus)
     }
 
     $query += "virusinfected='1'"
+}
+
+if ($Subject)
+{
+    if ($query -notlike '*where*')
+    {
+        $query += " where "
+    }
+    else
+    {
+        $query += " and "
+    }
+
+    $query += "subject like '%$Subject%'"
 }
 
 Write-Verbose "Data query has been setup"
