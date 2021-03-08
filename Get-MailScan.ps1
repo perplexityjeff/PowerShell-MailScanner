@@ -99,8 +99,6 @@ Write-Verbose "Setting up data query"
 #This is the base query it does by default get EVERYTHING so limit it where you can using OnlySpam or OnlyToday
 $query = "SELECT * FROM maillog"
 
-
-
 #Query builder for $Today to only include todays entries
 if ($Today -and -not($LastWeek))
 {
@@ -176,7 +174,7 @@ if ($To)
         $query += " and "
     }
 
-    $query += "to_address LIKE '$To'"
+    $query += "to_address LIKE '%$To%'"
 }
 
 if ($ToDomain)
@@ -204,21 +202,7 @@ if ($From)
         $query += " and "
     }
 
-    $query += "from_address LIKE '$From'"
-}
-
-if ($TLD)
-{
-    if ($query -notlike '*where*')
-    {
-        $query += " where "
-    }
-    else
-    {
-        $query += " and "
-    }
-
-    $query += "from_address like '%.$TLD'"
+    $query += "from_address LIKE '%$From%'"
 }
 
 if ($Virus)
