@@ -12,7 +12,7 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 Use Format-Table, Select-Object and Get-Member to get the table how you want it. 
 
 ## Prerequisites
-* The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/6.9.html. The script looks by default on location C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll however using -MySQLPath you can change it if you like.
+* The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/8.html. The script looks by default on location `C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll` however using `-MySQLPath` you can change it if you like.
 
 * Remote Access to the MySQL or MariaDB database using a good secured user that can only 'Select' 
 
@@ -31,7 +31,7 @@ http://mailwatch.org/
 
 http://lists.mailscanner.info/pipermail/mailscanner/2010-June/095932.html
 
-https://dev.mysql.com/downloads/connector/net/6.9.html
+https://dev.mysql.com/downloads/connector/net/8.html
 
 https://www.cogmotive.com/blog/powershell/querying-mysql-from-powershell
 
