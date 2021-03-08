@@ -9,7 +9,7 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 ```
 ./Get-MailScan -Server 127.0.0.1 -UserName user -Password example -Spam -Today
 ```
-Use Format-Table, Select-Object and Get-Member to get the table how you want it. 
+Use `Format-Table`, `Select-Object` and `Get-Member` to get the table how you want it. 
 
 ## Options
 
