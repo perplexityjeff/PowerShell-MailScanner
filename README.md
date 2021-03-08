@@ -11,6 +11,46 @@ Example that retrieves all mail entries that are marked as Spam and only from To
 ```
 Use Format-Table, Select-Object and Get-Member to get the table how you want it. 
 
+## Options
+
+<table>
+  <tr>
+    <td><tt>-LastWeek</tt></td>
+	  <td>Default filter to query for mail between today and last week</td>
+  </tr>
+  <tr>
+    <td><tt>-Today</tt></td>
+	  <td>Default filter to query for mail that arrived today</td>
+  </tr>
+  <tr>
+    <td><tt>-Virus</tt></td>
+	  <td>Default filter to query for mail that was detected as a virus</td>
+  </tr>
+  <tr>
+    <td><tt>-Spam</tt></td>
+	  <td>Default filter to query for mail that was detected as a spam</td>
+  </tr>
+  <tr>
+    <td><tt>-NotSpam</tt></td>
+	  <td>Default filter to query for mail that was detected as a non-spam</td>
+  </tr>
+  <tr>
+    <td><tt>-To</tt></td>
+	  <td>Default filter to query for mail based on a To address this contains wildcards</td>
+  </tr>
+  <tr>
+    <td><tt>-From</tt></td>
+	  <td>Default filter to query for mail based on a From address this contains wildcards</td>
+  </tr>
+  <tr>
+    <td><tt>-ToDomain</tt></td>
+	  <td>Default filter to query for mail based on a mail domain</td>
+  </tr>
+  <tr>
+    <td><tt>-Subject</tt></td>
+	  <td>Default filter to query for mail based on the subject line of a mail</td>
+  </tr>
+
 ## Prerequisites
 * The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/8.html. The script looks by default on location `C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll` however using `-MySQLPath` you can change it if you like.
 
