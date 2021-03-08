@@ -53,15 +53,23 @@ param
     [Parameter()][Switch]$Spam,
     [Parameter()][Switch]$NotSpam,
     [Parameter()][Switch]$Today,
+    [Parameter()][Switch]$LastWeek,
     [Parameter()][String]$To,
+    [Parameter()][String]$ToDomain,
     [Parameter()][String]$From,
     [Parameter()][String]$TLD,
     [Parameter()][Switch]$Virus,
     [Parameter()][String]$Subject, 
     [Parameter()][String]$Database = "mailscanner",
     [Parameter()][int]$Port = 3306,
-    [Parameter()][String]$MySQLPath = "C:\Program Files (x86)\MySQL\MySQL Connector Net 6.10.5\Assemblies\v4.5.2\MySql.Data.dll"  
+    [Parameter()][String]$MySQLPath = "C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll"  
 )
+
+if (-Not (Test-Path $MySQLPath))
+{
+    Write-Error "MySQL Connector could not be found, please reinstall or use -MySQLPath to specify the location"
+    exit
+}
 
 #Function to query the database and return the results back to the command line to edit, save or modify to your hearts content
 function GetDataFromDatabase($q)
@@ -91,8 +99,10 @@ Write-Verbose "Setting up data query"
 #This is the base query it does by default get EVERYTHING so limit it where you can using OnlySpam or OnlyToday
 $query = "SELECT * FROM maillog"
 
-#Query builder for $OnlyToday to only include todays entries
-if ($Today)
+
+
+#Query builder for $Today to only include todays entries
+if ($Today -and -not($LastWeek))
 {
     if ($query -notlike '*where*')
     {
@@ -103,9 +113,29 @@ if ($Today)
         $query += " and "
     }
 
-    $DateToday = (get-date -uFormat "%Y-%m-%d");
+    $DateToday = (get-date -uFormat "%Y-%m-%d")
     $query += "date='$DateToday'"
 }
+
+#Query builder for $LastWeek to only include LastWeeks entries
+if ($LastWeek -and -not($Today))
+{
+    if ($query -notlike '*where*')
+    {
+        $query += " where "
+    }
+    else 
+    {
+        $query += " and "
+    }
+
+    $DateToday = (Get-Date -UFormat "%Y-%m-%d")
+
+    $DateLastWeek = (Get-Date).AddDays(-7) | Get-Date -UFormat "%Y-%m-%d"
+
+    $query += "date BETWEEN '$DateLastWeek' AND '$DateToday'"
+}
+
 
 if ($Spam)
 {
@@ -146,7 +176,21 @@ if ($To)
         $query += " and "
     }
 
-    $query += "to_address='$To'"
+    $query += "to_address LIKE '$To'"
+}
+
+if ($ToDomain)
+{
+    if ($query -notlike '*where*')
+    {
+        $query += " where "
+    }
+    else 
+    {
+        $query += " and "
+    }
+
+    $query += "to_domain='$ToDomain'"
 }
 
 if ($From)
@@ -160,7 +204,7 @@ if ($From)
         $query += " and "
     }
 
-    $query += "from_address='$From'"
+    $query += "from_address LIKE '$From'"
 }
 
 if ($TLD)
