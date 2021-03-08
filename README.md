@@ -57,7 +57,7 @@ Use `Format-Table`, `Select-Object` and `Get-Member` to get the table how you wa
 
 The script looks by default on location `C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll` however using `-MySQLPath` you can change it if you like.
 
-* Remote Access to the MySQL or MariaDB database using a good secured user that can only 'Select' 
+* Remote Access to the MySQL or MariaDB database using a good secured user that can only `Select`.
 
 ## Learning
 I am still learning PowerShell and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. I am open to pull requests to improve the project of course. 
