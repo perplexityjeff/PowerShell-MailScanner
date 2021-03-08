@@ -57,7 +57,6 @@ param
     [Parameter()][String]$To,
     [Parameter()][String]$ToDomain,
     [Parameter()][String]$From,
-    [Parameter()][String]$TLD,
     [Parameter()][Switch]$Virus,
     [Parameter()][String]$Subject, 
     [Parameter()][String]$Database = "mailscanner",
