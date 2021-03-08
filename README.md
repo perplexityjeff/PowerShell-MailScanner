@@ -2,7 +2,7 @@
 This is a PowerShell script to query a MailScanner database using the MySQL .NET Connector to retrieve mail entries from the database based on various filters to query and end up with just the data you want.
 
 ## Usage
-You can of course always use Get-Help .\Get-MailScan to get examples or help but the most general usage of the script could be as follows. 
+You can of course always use `Get-Help .\Get-MailScan` to get examples or help but the most general usage of the script could be as follows. 
 
 Example that retrieves all mail entries that are marked as Spam and only from Today that are in the database.
 
