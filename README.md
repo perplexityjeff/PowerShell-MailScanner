@@ -50,6 +50,7 @@ Use Format-Table, Select-Object and Get-Member to get the table how you want it.
     <td><tt>-Subject</tt></td>
 	  <td>Default filter to query for mail based on the subject line of a mail</td>
   </tr>
+</table>
 
 ## Prerequisites
 * The MySQL .NET Connector found at https://dev.mysql.com/downloads/connector/net/8.html. The script looks by default on location `C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll` however using `-MySQLPath` you can change it if you like.
