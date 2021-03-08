@@ -1,5 +1,5 @@
 # PowerShell-MailScanner
-This is a PowerShell script to query a MailScanner database using the MySQL .NET Connector to retrieve mail entries from the database.
+This is a PowerShell script to query a MailScanner database using the MySQL .NET Connector to retrieve mail entries from the database based on various filters to query and end up with just the data you want.
 
 ## Usage
 You can of course always use Get-Help .\Get-MailScan to get examples or help but the most general usage of the script could be as follows. 
@@ -60,7 +60,7 @@ The script looks by default on location `C:\Program Files (x86)\MySQL\MySQL Conn
 * Remote Access to the MySQL or MariaDB database using a good secured user that can only 'Select' 
 
 ## Learning
-I am still learning PowerShell and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. 
+I am still learning PowerShell and I do it mainly by just working as a day to day sysadmin. Please keep that in mind when viewing or using this script. I am open to pull requests to improve the project of course. 
 
 ## Credits
 The idea came by a post found on the mailscanner mailing list found here.
